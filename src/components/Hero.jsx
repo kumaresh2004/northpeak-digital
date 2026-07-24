@@ -59,7 +59,7 @@ function Hero() {
 
           <img
             src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200"
-            alt="NorthPeak Digital Team"
+            alt="NorthPeak Digital "
           />
 
         </div>
