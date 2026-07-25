@@ -43,13 +43,17 @@ const plans = [
 
 function Pricing() {
   return (
-    <section className="pricing" id="pricing" data-aos="fade-up">
+    <section
+      className="pricing"
+      id="pricing"
+      data-aos="fade-up"
+      aria-labelledby="pricing-heading"
+    >
       <div className="container">
-
         <div className="section-heading">
           <span>PRICING</span>
 
-          <h2>
+          <h2 id="pricing-heading">
             Flexible Pricing
             <br />
             For Every Business
@@ -61,48 +65,48 @@ function Pricing() {
         </div>
 
         <div className="pricing-grid">
-
           {plans.map((plan, index) => (
-            <div
+            <article
+              key={index}
               className={`pricing-card ${
                 plan.featured ? "featured" : ""
               }`}
-              key={index}
+              aria-labelledby={`plan-title-${index}`}
             >
-
               {plan.featured && (
-                <div className="popular">
+                <div
+                  className="popular"
+                  aria-label="Most popular plan"
+                >
                   MOST POPULAR
                 </div>
               )}
 
-              <h3>{plan.name}</h3>
+              <h3 id={`plan-title-${index}`}>{plan.name}</h3>
 
-              <h1>{plan.price}</h1>
+              <p className="price">
+                <strong>{plan.price}</strong>
+              </p>
 
               <p className="description">
                 {plan.description}
               </p>
 
               <ul>
-
                 {plan.features.map((feature, i) => (
-                  <li key={i}>
-                    ✓ {feature}
-                  </li>
+                  <li key={i}>✓ {feature}</li>
                 ))}
-
               </ul>
 
-              <button>
+              <button
+                type="button"
+                aria-label={`Choose the ${plan.name} plan`}
+              >
                 Get Started
               </button>
-
-            </div>
+            </article>
           ))}
-
         </div>
-
       </div>
     </section>
   );

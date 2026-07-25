@@ -105,3 +105,8 @@ grid-template-columns:1fr;
 }
 
 }
+.price{
+    font-size:3rem;
+    font-weight:700;
+    margin:15px 0;
+}
