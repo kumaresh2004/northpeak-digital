@@ -11,6 +11,7 @@ margin-bottom:40px;
 }
 
 .trusted-grid{
+list-style: none;
 display:grid;
 grid-template-columns:repeat(5,1fr);
 gap:20px;

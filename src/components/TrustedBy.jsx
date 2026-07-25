@@ -1,31 +1,32 @@
 import "../styles/trustedby.css";
 
+const industries = [
+  "E-commerce",
+  "Healthcare",
+  "Education",
+  "Finance",
+  "Startups",
+];
+
 function TrustedBy() {
   return (
-    <section className="trusted">
-
+    <section
+      className="trusted"
+      aria-labelledby="trusted-heading"
+    >
       <div className="container">
-
-        <p className="trusted-title">
+        <h2 id="trusted-heading" className="trusted-title">
           Trusted by startups, agencies, and growing businesses
-        </p>
+        </h2>
 
-        <div className="trusted-grid">
-
-          <div className="brand-card">E-commerce</div>
-
-          <div className="brand-card">Healthcare</div>
-
-          <div className="brand-card">Education</div>
-
-          <div className="brand-card">Finance</div>
-
-          <div className="brand-card">Startups</div>
-
-        </div>
-
+        <ul className="trusted-grid">
+          {industries.map((industry) => (
+            <li key={industry} className="brand-card">
+              {industry}
+            </li>
+          ))}
+        </ul>
       </div>
-
     </section>
   );
 }
