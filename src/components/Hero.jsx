@@ -2,7 +2,7 @@ import "../styles/hero.css";
 
 function Hero() {
   return (
-    <section className="hero" data-aos="fade-up">
+    <section className="hero">
       <div className="hero-overlay"></div>
 
       <div className="container hero-container">

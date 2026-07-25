@@ -8,7 +8,7 @@ import {
 
 function Footer() {
   return (
-    <footer className="footer" data-aos="fade-up">
+    <footer className="footer">
       <div className="container footer-top">
         <div className="footer-brand">
           <h2>

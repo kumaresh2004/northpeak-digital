@@ -29,7 +29,6 @@ function Testimonials() {
     <section
       className="testimonials"
       id="testimonials"
-      data-aos="fade-up"
       aria-labelledby="testimonials-heading"
     >
       <div className="container">

@@ -46,7 +46,6 @@ function Pricing() {
     <section
       className="pricing"
       id="pricing"
-      data-aos="fade-up"
       aria-labelledby="pricing-heading"
     >
       <div className="container">

@@ -46,7 +46,6 @@ function Services() {
     <section
       className="services"
       id="services"
-      data-aos="fade-up"
       aria-labelledby="services-heading"
     >
       <div className="container">

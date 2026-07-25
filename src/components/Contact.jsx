@@ -2,7 +2,7 @@ import "../styles/contact.css";
 
 function Contact() {
   return (
-    <section className="contact" id="contact" data-aos="fade-up">
+    <section className="contact" id="contact">
       <div className="container contact-wrapper">
         <div className="contact-left">
           <span>GET IN TOUCH</span>

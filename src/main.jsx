@@ -7,9 +7,9 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 AOS.init({
-  duration: 1000,
+  duration: 700,
   once: true,
-  easing: "ease-in-out",
+  disable: window.innerWidth < 768,
 });
 
 ReactDOM.createRoot(document.getElementById("root")).render(
