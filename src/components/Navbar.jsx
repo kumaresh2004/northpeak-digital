@@ -5,52 +5,64 @@ import "../styles/navbar.css";
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <header className="navbar">
-
       <div className="container nav-container">
-
-        <a href="#" className="logo">
-          NorthPeak<span>Studio</span>
+        <a
+          href="#"
+          className="logo"
+          aria-label="NorthPeak Digital Home"
+        >
+          NorthPeak<span>Digital</span>
         </a>
 
-        <nav className={menuOpen ? "nav-links active" : "nav-links"}>
-
-          <a href="#services" onClick={() => setMenuOpen(false)}>
+        <nav
+          className={menuOpen ? "nav-links active" : "nav-links"}
+          aria-label="Primary Navigation"
+        >
+          <a href="#services" onClick={closeMenu}>
             Services
           </a>
 
-          <a href="#testimonials" onClick={() => setMenuOpen(false)}>
+          <a href="#testimonials" onClick={closeMenu}>
             Testimonials
           </a>
 
-          <a href="#pricing" onClick={() => setMenuOpen(false)}>
+          <a href="#pricing" onClick={closeMenu}>
             Pricing
           </a>
 
-          <a href="#contact" onClick={() => setMenuOpen(false)}>
+          <a href="#contact" onClick={closeMenu}>
             Contact
           </a>
 
           <a
             href="#contact"
             className="nav-btn"
-            onClick={() => setMenuOpen(false)}
+            onClick={closeMenu}
+            aria-label="Get Started"
           >
             Get Started
           </a>
-
         </nav>
 
-        <div
+        <button
           className="menu-btn"
+          type="button"
           onClick={() => setMenuOpen(!menuOpen)}
+          aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={menuOpen}
+          aria-controls="primary-navigation"
         >
-          {menuOpen ? <FaTimes /> : <FaBars />}
-        </div>
-
+          {menuOpen ? (
+            <FaTimes aria-hidden="true" />
+          ) : (
+            <FaBars aria-hidden="true" />
+          )}
+        </button>
       </div>
-
     </header>
   );
 }
