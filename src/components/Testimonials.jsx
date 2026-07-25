@@ -26,13 +26,17 @@ const testimonials = [
 
 function Testimonials() {
   return (
-    <section className="testimonials" id="testimonials" data-aos="fade-up">
+    <section
+      className="testimonials"
+      id="testimonials"
+      data-aos="fade-up"
+      aria-labelledby="testimonials-heading"
+    >
       <div className="container">
-
         <div className="section-heading">
           <span>TESTIMONIALS</span>
 
-          <h2>
+          <h2 id="testimonials-heading">
             What Our Clients
             <br />
             Say About Us
@@ -44,11 +48,16 @@ function Testimonials() {
         </div>
 
         <div className="testimonial-grid">
-
           {testimonials.map((item, index) => (
-            <div className="testimonial-card" key={index}>
-
-              <div className="stars">
+            <article
+              className="testimonial-card"
+              key={index}
+              aria-labelledby={`client-name-${index}`}
+            >
+              <div
+                className="stars"
+                aria-hidden="true"
+              >
                 ⭐⭐⭐⭐⭐
               </div>
 
@@ -57,24 +66,26 @@ function Testimonials() {
               </p>
 
               <div className="client">
-
                 <img
                   src={item.image}
-                  alt={item.name}
+                  alt={`${item.name}, ${item.role}`}
+                  width="80"
+                  height="80"
+                  loading="lazy"
+                  decoding="async"
                 />
 
                 <div>
-                  <h4>{item.name}</h4>
-                  <span>{item.role}</span>
+                  <h3 id={`client-name-${index}`}>
+                    {item.name}
+                  </h3>
+
+                  <p>{item.role}</p>
                 </div>
-
               </div>
-
-            </div>
+            </article>
           ))}
-
         </div>
-
       </div>
     </section>
   );
