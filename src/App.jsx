@@ -1,28 +1,39 @@
+import { lazy, Suspense } from "react";
 import "./styles/global.css";
 
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import TrustedBy from "./components/TrustedBy";
-import Services from "./components/Services";
-import Testimonials from "./components/Testimonials";
-import Pricing from "./components/Pricing";
-import Contact from "./components/Contact";
-import CTA from "./components/CTA";
-import Footer from "./components/Footer";
+const Navbar = lazy(() => import("./components/Navbar"));
+const Hero = lazy(() => import("./components/Hero"));
+const Services = lazy(() => import("./components/Services"));
+const TrustedBy = lazy(() => import("./components/TrustedBy"));
+const Testimonials = lazy(() => import("./components/Testimonials"));
+const Pricing = lazy(() => import("./components/Pricing"));
+const Contact = lazy(() => import("./components/Contact"));
+const CTA = lazy(() => import("./components/CTA"));
+const Footer = lazy(() => import("./components/Footer"));
 
 function App() {
   return (
-    <>
+    <Suspense
+      fallback={
+        <div className="loading">
+          Loading NorthPeak Digital...
+        </div>
+      }
+    >
       <Navbar />
-      <Hero />
-      <TrustedBy />
-      <Services />
-      <Testimonials />
-      <Pricing />
-      <Contact />
-      <CTA />
+
+      <main>
+        <Hero />
+        <TrustedBy />
+        <Services />
+        <Testimonials />
+        <Pricing />
+        <Contact />
+        <CTA />
+      </main>
+
       <Footer />
-    </>
+    </Suspense>
   );
 }
 
